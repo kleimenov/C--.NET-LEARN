@@ -16,17 +16,29 @@ namespace SimpleServer.API.Controllers
             _authService = authService;
         }
 
-        [HttpGet("hello")]
-        public IActionResult GetHello()
+        [HttpGet("get_user")]
+       public IActionResult GetUser([FromBody] AuthGetUserRequest request)
         {
-            var response = new ApiResponse<string>
+            var result = _authService.GetUser(request.Email);
+            if (!result)
+            {
+                var notFoundResponse = new ApiResponse<string>
+                {
+                    Success = false,
+                    Message = "User not found",
+                    Data = null
+                };
+                return NotFound(notFoundResponse);
+            }
+            var successResponse = new ApiResponse<string>
             {
                 Success = true,
-                Message = "Приветствие успешно получено",
-                Data = _authService.GetHello()
+                Message = "User data successfully retrieved",
+                Data = $"User with email {request.Email} found"
             };
-            return Ok(response);
+            return Ok(successResponse);
         }
+
 
         [HttpPost("greet")]
         public IActionResult Greet([FromBody] AuthRequest request)

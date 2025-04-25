@@ -3,6 +3,6 @@ namespace SimpleServer.API.Interfaces
     public interface IAuthService
     {
         string Greet(string name);
-        string GetHello();
+        bool GetUser(string email);
     }
 }

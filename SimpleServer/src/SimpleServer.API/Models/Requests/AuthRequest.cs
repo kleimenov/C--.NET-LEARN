@@ -6,4 +6,8 @@ namespace SimpleServer.API.Models.Requests
         public required string Password { get; set; }
         public required string Email { get; set; }
     }
+    public class AuthGetUserRequest
+    {
+        public required string Email { get; set; }
+    }
 }
