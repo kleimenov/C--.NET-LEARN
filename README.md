@@ -8,6 +8,12 @@ dotnet new console
 ### Run project
 dotnet run
 
+### Run project (without watch)
+dotnet run --project src/SimpleServer.API
+
+### Run project (with watch)
+dotnet watch run --project src/SimpleServer.API 
+
 
 ## Fundomentals folder - learn language concepts
 ## SimpleServer folder - simple server to learn API etc
@@ -64,7 +70,3 @@ SimpleServer/
 │   └── SimpleServer.Service.Tests # Интеграционные тесты
 │
 └── SimpleServer.sln               # Файл решения
-
-
-
-https://chat.deepseek.com/a/chat/s/74032783-488d-46d4-991c-0b02818c3f4b

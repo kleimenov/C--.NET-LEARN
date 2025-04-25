@@ -1,6 +1,6 @@
 namespace SimpleServer.API.Interfaces
 {
-    public interface IGreetingService
+    public interface IAuthService
     {
         string Greet(string name);
         string GetHello();
