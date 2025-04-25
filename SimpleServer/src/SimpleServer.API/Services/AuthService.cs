@@ -1,7 +1,7 @@
 using SimpleServer.API.Interfaces;
 namespace SimpleServer.API.Services
 {
-    public class GreetingService : IGreetingService
+    public class AuthService : IAuthService
     {
         public string Greet(string name)
         {

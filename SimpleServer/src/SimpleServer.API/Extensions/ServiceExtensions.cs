@@ -8,8 +8,7 @@ namespace SimpleServer.API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
-            services.AddScoped<IGreetingService, GreetingService>();
-            services.AddScoped<ICalculationService, CalculationService>();
+            services.AddScoped<IAuthService, AuthService>();
             
             return services;
         }

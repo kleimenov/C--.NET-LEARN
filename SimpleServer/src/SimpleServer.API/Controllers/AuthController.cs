@@ -7,13 +7,13 @@ namespace SimpleServer.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class GreetingController : ControllerBase 
+    public class AuthController : ControllerBase 
     {
-        private readonly IGreetingService _greetingService;
+        private readonly IAuthService _authService;
 
-        public GreetingController(IGreetingService greetingService)
+        public AuthController(IAuthService authService)
         {
-            _greetingService = greetingService;
+            _authService = authService;
         }
 
         [HttpGet("hello")]
@@ -23,19 +23,19 @@ namespace SimpleServer.API.Controllers
             {
                 Success = true,
                 Message = "Приветствие успешно получено",
-                Data = _greetingService.GetHello()
+                Data = _authService.GetHello()
             };
             return Ok(response);
         }
 
         [HttpPost("greet")]
-        public IActionResult Greet([FromBody] GreetRequest request)
+        public IActionResult Greet([FromBody] AuthRequest request)
         {
             var response = new ApiResponse<string>
             {
                 Success = true,
                 Message = "Приветствие успешно получено",
-                Data = _greetingService.Greet(request.Name)
+                Data = _authService.Greet(request.Name)
             };
             return Ok(response);
         }
