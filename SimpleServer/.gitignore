@@ -1,0 +1,46 @@
+## General .NET ignores
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.cache
+.nuget/
+*.nupkg
+packages/
+.vs/
+.idea/
+.vscode/
+*.swp
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.testlog
+appsettings.Development.json
+launchSettings.json
+*.coverage
+*.coveragexml
+*.http
+
+## Project-specific ignores
+src/**/obj/
+src/**/bin/
+tests/**/obj/
+tests/**/bin/
+
+## Rider specific
+_ReSharper.*
+*.sln.iml
+
+## VS Code specific
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Test results
+[Tt]est[Rr]esult*/
+*.trx
+*.coverage
+
+## MacOS
+.DS_Store
